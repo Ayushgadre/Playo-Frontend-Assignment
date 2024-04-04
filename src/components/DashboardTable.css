@@ -1,0 +1,21 @@
+.tableHead {
+  font-size: 14px;
+}
+
+.tableData {
+  font-size: 14px;
+}
+
+td.tableData {
+  padding: 16px;
+  border: none;
+  gap: 16px;
+  height: 10px;
+}
+
+.statusButton {
+  border: none;
+  border-radius: 22px;
+  padding: 8px 12px;
+  gap: 10px;
+}

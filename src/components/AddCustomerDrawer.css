@@ -1,0 +1,51 @@
+:where(.css-dev-only-do-not-override-11xg00t).ant-select-outlined:not(
+    .ant-select-customize-input
+  )
+  .ant-select-selector {
+  border: 0px solid black;
+  background: #ffffff;
+}
+
+.selectProduct {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+:where(.css-dev-only-do-not-override-11xg00t).ant-select .ant-select-arrow {
+  color: black;
+}
+
+:where(.css-dev-only-do-not-override-11xg00t).ant-input {
+  border-radius: 0px;
+}
+
+:where(.css-dev-only-do-not-override-11xg00t).ant-input-outlined {
+  border-color: black;
+}
+
+:where(.css-dev-only-do-not-override-11xg00t).ant-picker-outlined {
+  border: 1px solid black;
+  border-radius: 0px;
+}
+:where(.css-dev-only-do-not-override-11xg00t).ant-picker .ant-picker-suffix {
+  color: black;
+}
+
+.statusButton {
+  background-color: #ebf9f1;
+  color: #1f9254;
+  border: none;
+  border-radius: 22px;
+  padding: 8px 12px;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+.drawerCloseIcon {
+  position: absolute;
+  top: 1%;
+  left: -14%;
+  font-size: 30px;
+  color: white;
+}
