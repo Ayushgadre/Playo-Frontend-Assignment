@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-// import SideBar from "./SideBar";
-// import Header from "./Header";
+import SideBar from "./SideBar";
+import Header from "./Header";
 import { Form, Button } from "react-bootstrap";
 import { IoMdAdd } from "react-icons/io";
 import { MdOutlineArrowDropDown } from "react-icons/md";
