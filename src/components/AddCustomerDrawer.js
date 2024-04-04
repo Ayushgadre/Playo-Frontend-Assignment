@@ -1,8 +1,8 @@
 // AddCustomerDrawer.js
-import React from "react";
-import { Drawer, Button, Select, Input, DatePicker } from "antd";
-import { MdOutlineArrowDropDown, MdOutlineClose } from "react-icons/md";
-import "./AddCustomerDrawer.css";
+import React from 'react';
+import { Drawer, Button, Select, Input, DatePicker } from 'antd';
+import { MdOutlineArrowDropDown, MdOutlineClose } from 'react-icons/md';
+import './AddCustomerDrawer.css';
 
 const { Option } = Select;
 
@@ -10,7 +10,7 @@ const AddCustomerDrawer = ({ visible, onClose, products }) => {
   return (
     <Drawer
       title={
-        <span style={{ fontSize: "24px", fontWeight: "bold" }}>
+        <span style={{ fontSize: '24px', fontWeight: 'bold' }}>
           Add Customer
         </span>
       }
@@ -27,12 +27,12 @@ const AddCustomerDrawer = ({ visible, onClose, products }) => {
       <Select
         defaultValue="Select a product"
         size="large"
-        style={{ width: "100%", border: "1px solid black", gap: "16px" }}
+        style={{ width: '100%', border: '1px solid black', gap: '16px' }}
         onChange={(value) => console.log(value)}
         dropdownRender={(menu) => (
           <div>
             {menu}
-            <MdOutlineArrowDropDown style={{ color: "white" }} />
+            <MdOutlineArrowDropDown style={{ color: 'white' }} />
           </div>
         )}
       >
@@ -41,7 +41,7 @@ const AddCustomerDrawer = ({ visible, onClose, products }) => {
             <img
               src={product.image}
               alt={product.name}
-              style={{ width: "20px", marginRight: "5px" }}
+              style={{ width: '20px', marginRight: '5px' }}
             />
             {product.name}
           </Option>
@@ -52,14 +52,14 @@ const AddCustomerDrawer = ({ visible, onClose, products }) => {
         Customer Name
         <Input
           placeholder="Enter Customer Name"
-          style={{ marginTop: "10px" }}
+          style={{ marginTop: '10px' }}
           size="large"
         />
       </div>
 
       <div className="mt-2 selectProduct">
         Select Date
-        <DatePicker size="large" style={{ width: "100%", marginTop: "10px" }} />
+        <DatePicker size="large" style={{ width: '100%', marginTop: '10px' }} />
       </div>
 
       <div className="mt-2 selectProduct">
@@ -72,7 +72,7 @@ const AddCustomerDrawer = ({ visible, onClose, products }) => {
         <Select
           defaultValue="Select Payment Mode"
           size="large"
-          style={{ width: "100%", border: "1px solid black" }}
+          style={{ width: '100%', border: '1px solid black' }}
         >
           <Option value="Transfer Bank">Transfer Bank</Option>
           <Option value="Cash on Delivery">Cash on Delivery</Option>
@@ -84,17 +84,17 @@ const AddCustomerDrawer = ({ visible, onClose, products }) => {
         <Select
           defaultValue="Select Status"
           size="large"
-          style={{ width: "100%", border: "1px solid black" }}
+          style={{ width: '100%', border: '1px solid black' }}
         >
           <Option value="Delivered ">
             <button
               style={{
-                border: "none",
-                borderRadius: "22px",
-                padding: "0px 8px 0px 9px",
-                gap: "10px",
-                background: "#EBF9F1",
-                color: "#1F9254",
+                border: 'none',
+                borderRadius: '22px',
+                padding: '0px 8px 0px 9px',
+                gap: '10px',
+                background: '#EBF9F1',
+                color: '#1F9254',
               }}
             >
               Delivered
@@ -103,12 +103,12 @@ const AddCustomerDrawer = ({ visible, onClose, products }) => {
           <Option value="Process">
             <button
               style={{
-                border: "none",
-                borderRadius: "22px",
-                padding: "0px 8px 0px 9px",
-                gap: "10px",
-                color: "#CD6200",
-                background: "#FEF2E5",
+                border: 'none',
+                borderRadius: '22px',
+                padding: '0px 8px 0px 9px',
+                gap: '10px',
+                color: '#CD6200',
+                background: '#FEF2E5',
               }}
             >
               Process
@@ -117,12 +117,12 @@ const AddCustomerDrawer = ({ visible, onClose, products }) => {
           <Option value="Cancelled">
             <button
               style={{
-                border: "none",
-                borderRadius: "22px",
-                padding: "0px 8px 0px 9px",
-                gap: "10px",
-                color: "black",
-                background: "#FBE7E8",
+                border: 'none',
+                borderRadius: '22px',
+                padding: '0px 8px 0px 9px',
+                gap: '10px',
+                color: 'black',
+                background: '#FBE7E8',
               }}
             >
               Cancelled
@@ -136,11 +136,11 @@ const AddCustomerDrawer = ({ visible, onClose, products }) => {
           type="dark"
           size="large"
           style={{
-            marginTop: "50px",
-            background: "black",
-            color: "white",
-            width: "100%",
-            lineHeight: "20px",
+            marginTop: '50px',
+            background: 'black',
+            color: 'white',
+            width: '100%',
+            lineHeight: '20px',
           }}
         >
           + Add
