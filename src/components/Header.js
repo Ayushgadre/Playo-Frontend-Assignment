@@ -1,5 +1,3 @@
-// Header.js
-
 import React, { useEffect } from "react";
 import { RiMenu3Line } from "react-icons/ri";
 import { FaSearch } from "react-icons/fa";
