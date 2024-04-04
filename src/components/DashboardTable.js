@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaSort } from "react-icons/fa";
 import { FiEdit } from "react-icons/fi";
 import { MdOutlineDeleteOutline } from "react-icons/md";
-
 import "./DashboardTable.css";
 
 import ProductImageA from "../Assets/unsplash_h0AnGGgseio.png";
@@ -22,6 +21,9 @@ const DashboardTable = () => {
     key: null,
     direction: "ascending",
   });
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
 
   const data = [
     {
@@ -144,6 +146,12 @@ const DashboardTable = () => {
     return 0;
   });
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = sortedData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className="table-responsive">
       <table className="table table-striped">
@@ -215,6 +223,117 @@ const DashboardTable = () => {
           ))}
         </tbody>
       </table>
+      {/* <nav className="" style={{ float: 'right' }}>
+        <ul className="pagination">
+          <li className="page-item">
+            <button
+              className="page-link "
+              onClick={() => paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+              style={{ fontSize: '12px', color: '#9E9E9E', border: 'none' }}
+            >
+              Previous
+            </button>
+          </li>
+          {[...Array(Math.ceil(sortedData.length / itemsPerPage))].map(
+            (_, index) => (
+              <li key={index} className="page-item">
+                <button
+                  className={`page-link me-2 ${
+                    currentPage === index + 1 ? 'active' : ''
+                  }`}
+                  style={{
+                    borderRadius: '10px',
+                    background: currentPage === index + 1 ? 'black' : '',
+                    color: currentPage === index + 1 ? 'white' : '',
+                  }}
+                  onClick={() => paginate(index + 1)}
+                >
+                  {index + 1}
+                </button>
+              </li>
+            )
+          )}
+
+          <li className="page-item">
+            <button
+              className="page-link "
+              onClick={() => paginate(currentPage  1)}
+              disabled={
+                currentPage === Math.ceil(sortedData.length / itemsPerPage)
+              }
+              style={{ fontSize: '12px', color: '#9E9E9E', border: 'none' }}
+            >
+              Next
+            </button>
+          </li>
+        </ul>
+      </nav> */}
+      <nav className="" style={{ float: "right" }}>
+        <ul className="pagination">
+          {/* Previous button */}
+          <li className="page-item">
+            <button
+              className="page-link "
+              onClick={() => paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+              style={{ fontSize: "12px", color: "#9E9E9E", border: "none" }}
+            >
+              Previous
+            </button>
+          </li>
+          {/* Page buttons */}
+          {[...Array(Math.ceil(sortedData.length / itemsPerPage))].map(
+            (_, index) => (
+              <li key={index} className="page-item">
+                <button
+                  className={`page-link me-2 ${
+                    currentPage === index + 1 ? "bg-dark text-light" : ""
+                  }`}
+                  style={{
+                    borderRadius: "10px",
+                  }}
+                  onClick={() => paginate(index + 1)}
+                >
+                  {index + 1}
+                </button>
+              </li>
+            )
+          )}
+          <button
+            className="bg-light text-dark me-2"
+            style={{
+              borderRadius: "10px",
+              width: "30px",
+              border: "1px solid #000000",
+            }}
+          >
+            2
+          </button>
+          <button
+            className="bg-light text-dark  me-2"
+            style={{
+              borderRadius: "10px",
+              width: "30px",
+              border: "1px solid #000000",
+            }}
+          >
+            3
+          </button>
+          <li className="page-item">
+            <button
+              className="page-link"
+              onClick={() => paginate(currentPage + 1)}
+              disabled={
+                currentPage === Math.ceil(sortedData.length / itemsPerPage)
+              }
+              style={{ fontSize: "12px", color: "#9E9E9E", border: "none" }}
+            >
+              Next
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };
